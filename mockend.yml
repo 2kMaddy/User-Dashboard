@@ -1,6 +1,7 @@
 models:
   Post:
-    hasMany: [User]
+    belongsTo: [User]
+    hasMany: [Comments]
     fake:
       _count: 50
       cover: { imageURL: [1920, 1080] }
