@@ -26,4 +26,5 @@ models:
       firstName: firstName
       lastName: lastName
       email: email
-      department: { oneOfString: [HR, Engineering, Sales, Marketing, Finance] }
+      department:
+        { oneOfString: ["HR", "Engineering", "Sales", "Marketing", "Finance"] }
