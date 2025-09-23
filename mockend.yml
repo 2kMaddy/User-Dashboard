@@ -1,6 +1,6 @@
 models:
   Post:
-    hasMany: [Comment]
+    hasMany: [User]
     fake:
       _count: 50
       cover: { imageURL: [1920, 1080] }
@@ -17,9 +17,9 @@ models:
       email: email
       body: { loremParagraphs: [10, 100] }
       createdAt: { dateTime: [2010-01-01T00:00:00Z, 2020-12-31T23:59:59Z] }
-Employee:
+User:
   # 👈 expose this model at /users
-  belongsTo: [Post]
+  hasMany: [Post]
   fake:
     _count: 30
     id: uuid
