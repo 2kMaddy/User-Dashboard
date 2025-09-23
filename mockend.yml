@@ -26,4 +26,4 @@ models:
       firstName: firstName
       lastName: lastName
       email: email
-      department: { enum: [HR, Engineering, Sales, Marketing, Finance] }
+      department: { oneOf: [HR, Engineering, Sales, Marketing, Finance] }
