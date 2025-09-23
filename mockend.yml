@@ -26,4 +26,13 @@ models:
       firstName: firstName
       lastName: lastName
       email: email
-      department: { oneOf: [HR, Engineering, Sales, Marketing, Finance] }
+      department:
+        type: string
+        enum:
+          - HR
+          - Engineering
+          - Sales
+          - Marketing
+          - Finance
+      required:
+       - department
