@@ -27,4 +27,4 @@ models:
       lastName: lastName
       email: email
       department:
-        { oneOfString: ["HR", "Engineering", "Sales", "Marketing", "Finance"] }
+        { pickOne: ["HR", "Engineering", "Sales", "Marketing", "Finance"] }
