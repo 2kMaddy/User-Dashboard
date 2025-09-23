@@ -1,10 +1,29 @@
 models:
-  Employee:
-  endpoint: users
-  fake:
-    _count: 30
-    id: uuid
-    firstName: firstName
-    lastName: lastName
-    email: email
-    department: { oneOfString: [HR, Engineering, Sales, Marketing, Finance] }
+  Post:
+    belongsTo: [User]
+    hasMany: [Comments]
+    fake:
+      _count: 50
+      cover: { imageURL: [1920, 1080] }
+      title: { loremWords: [5, 20] }
+      body: { loremParagraphs: [10, 100] }
+      category: { oneOfString: [one, two, three] }
+      isDraft: { bool: 20 }
+      views: { int: [0, 1000] }
+      createdAt: { dateTime: [2010-01-01T00:00:00Z, 2020-12-31T23:59:59Z] }
+  Comment:
+    belongsTo: [Post]
+    fake:
+      _count: 25
+      email: email
+      body: { loremParagraphs: [10, 100] }
+      createdAt: { dateTime: [2010-01-01T00:00:00Z, 2020-12-31T23:59:59Z] }
+  User:
+    hasMany: [Post]
+    fake:
+      _count: 30
+      id: uuid
+      firstName: firstName
+      lastName: lastName
+      email: email
+      department: { oneOfString: [HR, Engineering, Sales, Marketing, Finance] }
